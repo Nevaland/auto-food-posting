@@ -1,5 +1,6 @@
 import os
-from food_crawler import food_crawling, SCREENSHOT_FN
+from auto_food_poster import SCREENSHOT_FN
+from food_crawler import food_crawling
 
 
 def test_food_crawling():

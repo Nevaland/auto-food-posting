@@ -13,10 +13,9 @@ import os
 from time import sleep
 
 URL = 'https://www.gntp.or.kr/board/list'
-SCREENSHOT_FN = "screenshot.png"
 
 
-def food_crawling():
+def food_crawling(screenshot_fn):
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--log-level=3')
@@ -59,12 +58,8 @@ def food_crawling():
     png = driver.get_screenshot_as_png()
     im = Image.open(BytesIO(png))
     region = im.crop((55, 40, im.size[0]-55, im.size[1]-40))
-    region.save(SCREENSHOT_FN)
+    region.save(screenshot_fn)
 
     driver.close()
     driver.switch_to.window(driver.window_handles[-1])
     driver.close()
-
-
-if __name__ == "__main__":
-    food_crawling()
