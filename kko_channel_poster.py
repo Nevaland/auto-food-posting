@@ -52,8 +52,9 @@ def kko_channel_posting(channel_posting_url, screenshot_fn, kko_email, kko_passw
     driver.find_element_by_css_selector(
         '#mArticle > div > div > div:nth-child(1) > div > form > div.tit_tf > input').send_keys(title)
     # Content
-    driver.find_element_by_css_selector(
-        '#mArticle > div > div > div:nth-child(1) > div > form > div.desc_tf > div > div > div > div > textarea').send_keys(content)
+    if content != "":
+        driver.find_element_by_css_selector(
+            '#mArticle > div > div > div:nth-child(1) > div > form > div.desc_tf > div > div > div > div > textarea').send_keys(content)
     # Image
     driver.find_element_by_css_selector(
         '#mArticle > div > div > div:nth-child(1) > div > form > ul > li:nth-child(1) > div > input').send_keys(SCREENSHOT_FN_DIR)
