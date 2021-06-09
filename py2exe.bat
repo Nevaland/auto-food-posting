@@ -1,0 +1,1 @@
+pyinstaller --onefile --add-binary "chromedriver.exe";"." auto_food_poster.py
