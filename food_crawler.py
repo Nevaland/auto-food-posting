@@ -63,3 +63,5 @@ def food_crawling(screenshot_fn):
     driver.close()
     driver.switch_to.window(driver.window_handles[-1])
     driver.close()
+
+    return post_name
